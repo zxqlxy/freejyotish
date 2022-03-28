@@ -1,0 +1,47 @@
+head	1.2;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.2
+date	2003.05.01.08.32.52;	author michaeltaft;	state dead;
+branches;
+next	1.1;
+
+1.1
+date	2003.03.12.07.34.22;	author michaeltaft;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@Gone
+@
+text
+@<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- FILE TO HOLD CHART CALCULATION PREFERENCES --> 
+	<chart_calc_prefs>  
+		<ayanamsa>1</ayanamsa>
+		<house_system>'V'</house_system>
+		<outer_planets_ON>true</outer_planets_ON>
+		<vedic_planet_order>false</vedic_planet_order>
+		<siderial_ON>true</siderial_ON>
+		<true_node_ON>true</true_node_ON>
+	</chart_calc_prefs>
+@
+
+
+1.1
+log
+@Preferences Storage File
+@
+text
+@@
+

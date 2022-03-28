@@ -1,0 +1,276 @@
+head	1.3;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.3
+date	2003.05.01.08.34.57;	author michaeltaft;	state dead;
+branches;
+next	1.2;
+
+1.2
+date	2003.03.16.01.22.22;	author michaeltaft;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2003.02.25.00.51.59;	author michaeltaft;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.3
+log
+@Gone.
+@
+text
+@<?xml version="1.0"?>
+<!-- 16 February, 2003 - A beginning persistence strategy tester for
+FreeJyotish -->
+<natives>
+		<native id = "1">
+			<first_name>Michael</first_name>
+			<last_name>Taft</last_name>
+			<birth_city>Battle Creek</birth_city>
+			<birth_state>MI</birth_state>
+			<birth_country>USA</birth_country>
+			<lon_deg>-85</lon_deg>
+			<lon_min>11</lon_min>
+			<lon_sec>00</lon_sec>
+			<lat_deg>42</lat_deg>	
+			<lat_min>19</lat_min>
+			<lat_sec>00</lat_sec>	
+			<birth_year>1962</birth_year>
+			<birth_month>11</birth_month>
+			<birth_date>26</birth_date>
+			<birth_hour>11</birth_hour>
+			<birth_minute>11</birth_minute>
+			<birth_second>0</birth_second>
+			<time_zone_offset>-5.0</time_zone_offset>
+			<dst_offset>0</dst_offset>
+			<sex>1</sex>
+			<note>none</note>
+		</native>
+		
+		<native id = "2">
+			<first_name>Test</first_name>
+			<last_name>Person</last_name>
+			<birth_city>"Berkeley"</birth_city>
+			<birth_state>CA</birth_state>
+			<birth_country>USA</birth_country>
+			<lon_deg>-122</lon_deg>
+			<lon_min>16</lon_min>
+			<lon_sec>00</lon_sec>
+			<lat_deg>37</lat_deg>	
+			<lat_min>52</lat_min>
+			<lat_sec>00</lat_sec>		
+			<birth_year>1970</birth_year>
+			<birth_month>4</birth_month>
+			<birth_date>13</birth_date>
+			<birth_hour>14</birth_hour>
+			<birth_minute>41</birth_minute>
+			<birth_second>0</birth_second>
+			<time_zone_offset>-8.0</time_zone_offset>
+			<dst_offset>0</dst_offset>
+			<sex>2</sex>
+			<note>none</note>
+		</native>
+		
+		<native id = "3">
+			<first_name>BTest</first_name>
+			<last_name>Person2</last_name>
+			<birth_city>Albany</birth_city>
+			<birth_state>OR</birth_state>
+			<birth_country>USA</birth_country>
+			<lon_deg>-123</lon_deg>
+			<lon_min>06</lon_min>
+			<lon_sec>00</lon_sec>
+			<lat_deg>44</lat_deg>	
+			<lat_min>38</lat_min>
+			<lat_sec>00</lat_sec>		
+			<birth_year>1961</birth_year>
+			<birth_month>3</birth_month>
+			<birth_date>5</birth_date>
+			<birth_hour>15</birth_hour>
+			<birth_minute>26</birth_minute>
+			<birth_second>0</birth_second>
+			<time_zone_offset>-8.0</time_zone_offset>
+			<dst_offset>0</dst_offset>
+			<sex>1</sex>
+			<note>none</note>
+		</native>
+
+	<native id = "4">
+			<first_name>CTest</first_name>
+			<last_name>Person3</last_name>
+			<birth_city>Miami</birth_city>
+			<birth_state>FL</birth_state>
+			<birth_country>USA</birth_country>
+			<lon_deg>-80</lon_deg>
+			<lon_min>12</lon_min>
+			<lon_sec>00</lon_sec>
+			<lat_deg>25</lat_deg>	
+			<lat_min>46</lat_min>
+			<lat_sec>00</lat_sec>	
+			<birth_year>1974</birth_year>
+			<birth_month>6</birth_month>
+			<birth_date>17</birth_date>
+			<birth_hour>9</birth_hour>
+			<birth_minute>15</birth_minute>
+			<birth_second>0</birth_second>
+			<time_zone_offset>-5.0</time_zone_offset>
+			<dst_offset>1</dst_offset>
+			<sex>1</sex>
+			<note>none</note>ond
+		</native>
+
+	<native id = "5">
+			<first_name>TEST</first_name>
+			<last_name>INDIA</last_name>
+			<birth_city>NEW DELHI</birth_city>
+			<birth_state></birth_state>
+			<birth_country>India</birth_country>
+			<lon_deg>77</lon_deg>
+			<lon_min>12</lon_min>
+			<lon_sec>00</lon_sec>
+			<lat_deg>28</lat_deg>	
+			<lat_min>36</lat_min>
+			<lat_sec>00</lat_sec>		
+			<birth_year>2003</birth_year>
+			<birth_month>3</birth_month>
+			<birth_date>5</birth_date>
+			<birth_hour>23</birth_hour>
+			<birth_minute>06</birth_minute>
+			<birth_second>54</birth_second>
+			<time_zone_offset>5.5</time_zone_offset>
+			<dst_offset>0</dst_offset>
+			<sex>1</sex>
+			<note>none</note>
+		</native>
+
+	<native id = "6">
+			<first_name>Moscow</first_name>
+			<last_name>DST-TEST</last_name>
+			<birth_city>Moscow</birth_city>
+			<birth_state> </birth_state>
+			<birth_country>Russia</birth_country>
+			<lon_deg>37</lon_deg>
+			<lon_min>35</lon_min>
+			<lon_sec>00</lon_sec>
+			<lat_deg>55</lat_deg>	
+			<lat_min>452</lat_min>
+			<lat_sec>00</lat_sec>		
+			<birth_year>2003</birth_year>
+			<birth_month>3</birth_month>
+			<birth_date>9</birth_date>
+			<birth_hour>0</birth_hour>
+			<birth_minute>24</birth_minute>
+			<birth_second>12</birth_second>
+			<time_zone_offset>3.0</time_zone_offset>
+			<dst_offset>1</dst_offset>
+			<sex>1</sex>
+			<note>none</note>
+		</native>
+
+	<native id = "7">
+			<first_name>Test</first_name>
+			<last_name>Berlin-DST</last_name>
+			<birth_city>Berlin</birth_city>
+			<birth_state>none</birth_state>
+			<birth_country>Germany</birth_country>
+			<lon_deg>13</lon_deg>
+			<lon_min>22</lon_min>
+			<lon_sec>00</lon_sec>
+			<lat_deg>52</lat_deg>	
+			<lat_min>30</lat_min>
+			<lat_sec>00</lat_sec>		
+			<birth_year>2003</birth_year>
+			<birth_month>6</birth_month>
+			<birth_date>5</birth_date>
+			<birth_hour>23</birth_hour>
+			<birth_minute>35</birth_minute>
+			<birth_second>15</birth_second>
+			<time_zone_offset>1.0</time_zone_offset>
+			<dst_offset>1</dst_offset>
+			<sex>1</sex>
+			<note>none</note>
+		</native>
+
+<native id = "8">
+			<first_name>BLANK</first_name>
+			<last_name>CHART</last_name>
+			<birth_city>Brooklyn</birth_city>
+			<birth_state>NY</birth_state>
+			<birth_country>USA</birth_country>
+			<lon_deg>-73</lon_deg>
+			<lon_min>58</lon_min>
+			<lon_sec>00</lon_sec>
+			<lat_deg>40</lat_deg>	
+			<lat_min>42</lat_min>
+			<lat_sec>00</lat_sec>		
+			<birth_year>1999</birth_year>
+			<birth_month>12</birth_month>
+			<birth_date>31</birth_date>
+			<birth_hour>23</birth_hour>
+			<birth_minute>11</birth_minute>
+			<birth_second>0</birth_second>
+			<time_zone_offset>-5.0</time_zone_offset>
+			<dst_offset>0</dst_offset>
+			<sex>1</sex>
+			<note>none</note>
+		</native>
+</natives>
+@
+
+
+1.2
+log
+@New NativeInfo lon/lat format
+@
+text
+@@
+
+
+1.1
+log
+@Adding this xml file.
+@
+text
+@d11 6
+a16 2
+			<longitude>-84.55</longitude>
+			<latitude>42.73333333</latitude>		
+d35 6
+a40 2
+			<longitude>-122.26667</longitude>
+			<latitude>37.86667</latitude>		
+d54 2
+a55 2
+			<first_name>Another</first_name>
+			<last_name>TestPerson</last_name>
+d59 6
+a64 2
+			<longitude>-123.1</longitude>
+			<latitude>44.6333</latitude>		
+d78 4
+a81 4
+			<first_name>SomeOther</first_name>
+			<last_name>Guy</last_name>
+			<birth_city>Battle Creek</birth_city>
+			<birth_state>MI</birth_state>
+d83 106
+a188 6
+			<longitude>-84.55</longitude>
+			<latitude>42.73333333</latitude>		
+			<birth_year>1962</birth_year>
+			<birth_month>11</birth_month>
+			<birth_date>26</birth_date>
+			<birth_hour>11</birth_hour>
+@
+

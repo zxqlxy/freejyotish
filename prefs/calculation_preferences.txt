@@ -1,0 +1,41 @@
+head	1.2;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.2
+date	2003.05.17.09.12.50;	author michaeltaft;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2003.05.15.03.43.57;	author michaeltaft;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@Updated to include house system.
+@
+text
+@{ayanamsa=1, node=mean, outer_planets=on, mode=sidereal, house_system=O}
+@
+
+
+1.1
+log
+@Changed the location of this file.
+@
+text
+@d1 1
+a1 1
+{ayanamsa=1, node=mean, mode=sidereal, outer_planets=on}
+@
+

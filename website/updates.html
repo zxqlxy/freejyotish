@@ -1,0 +1,425 @@
+head	1.1;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.1
+date	2003.05.17.23.30.49;	author michaeltaft;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Saving web pages.
+@
+text
+@<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Updates</title>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+</head>
+<body text="#1c739e" bgcolor="#ffffff" link="#339999" vlink="#336666"
+ alink="#339999">
+<div align="right">
+<div align="left"><big><font color="#339999"><a
+ href="http://jyotish.sourceforge.net/index.html"><small>home</small></a></font></big><br>
+<big><b><font color="#993399">FREEJYOTISH UPDATES <br>
+</font></b></big> More than You Ever Wanted to Know<br>
+by Michael W. Taft<br>
+<br>
+</div>
+</div>
+<br>
+<span style="color: rgb(204, 51, 204);"><span
+ style="color: rgb(153, 51, 153); font-weight: bold;">16 FEB 03</span> </span><br>
+- created NativeInfo2 class, a better NativeInfo object. Soon, I'll
+rename it<br>
+to NativeInfo and get rid of the old one<br>
+- created NativeToXML class. This is a first attempt at developing a<br>
+persistence strategy for FreeJyotish<br>
+- wrote an XMLTester to test output of the writer.<br>
+<br>
+<span style="color: rgb(153, 51, 153); font-weight: bold;"> 21 FEB 03</span><br>
+- Finally got XML reader working. As usual, a very small feature in the
+code<br>
+was causing huge problems. Can't believe I wasted so much time trying to<br>
+figure out this one little thing. At least it's working now.<br>
+- Implemented the reading/writing of groups of natives to XML. After a
+debacle<br>
+wherein the writing looped indefinitely, creating an XML file almost
+400 Megs<br>
+in size before I shut it down, I was finally able to reign it in, and
+get it<br>
+to do most of what I wanted. This is an interesting point, because now
+for the<br>
+first time, I can get the ChartCenter up and running the way it should
+be. <br>
+<br>
+<span style="color: rgb(153, 51, 153); font-weight: bold;"> 24 FEB 03</span><br>
+- Began adding XML backend to ChartCenter. Now when program boots, it
+loads in<br>
+all the charts stored in XML file. Made a quick JList to display this
+on the<br>
+main frame. Worked fine. Need to make this list component a separate
+class<br>
+derived from JList that will offer a lot of functionality, and can be
+imported<br>
+into various containers and subcontainers throughout the program. <br>
+<br>
+<span style="font-weight: bold; color: rgb(153, 51, 153);"> 25 FEB 03</span><br>
+- Created separate JList class for Native List. Learned out to map
+objects into<br>
+a JList component (by giving object an overridden toString() method that<br>
+displays the object correctly in the JList).<br>
+<br>
+<span style="font-weight: bold; color: rgb(153, 51, 153);"> 03 MAR 03</span><br>
+- Reworked ChartCalculator to use NativeInfo2 objects<br>
+- Got FJListPanel widget working with program controls, so that Native
+selected<br>
+is loaded into view.<br>
+- Downloaded jUnit and installed both in classpath and with Ant<br>
+- Read a little about using jUnit with Ant<br>
+- Did some planning about how the ChartCenter has to handle Chart
+objects<br>
+(will they be too big to load hundreds of them into memory?)<br>
+<br>
+<span style="font-weight: bold; color: rgb(153, 51, 153);"> 04 MAR 03</span><br>
+- Created AllPlanetsToXML writer. Successfully outputs each Planet with
+name,<br>
+number, longitude, latitude, and velocity. Done in record time!<br>
+- Lots of conceptualization on paper.<br>
+- Began writing test jUnit test (suspended)<br>
+<br>
+<span style="font-weight: bold; color: rgb(153, 51, 153);"> 09 MAR 03</span><br>
+- Created a way to change any time zone with any dst value to GMT.
+Implemented it in FJ already.<br>
+Testing going perfectly well. <br>
+<br>
+<span style="color: rgb(153, 51, 153); font-weight: bold;"> 12 MAR 03</span><br>
+- Have worked extensively on the chart calculation preferences api in
+the past<br>
+couple of days. About half way there, currently.<br>
+- upgraded the FJ home site, and learned a little about working on it<br>
+- Finally got charts calculating through the Chart Center. The front end<br>
+updates via hearing a ChartCenterChangedEvent. <br>
+- Created calculation button in FJList that calculates charts <br>
+- Got the FJList to update itself when chart center changes.<br>
+- Got HoroscopeCanvas to update itself (independant of FJMainFrame)
+when chart<br>
+center changes (Magnum opus of the evening)<br>
+- Added name label to HoroscopeCanvas<br>
+- Added "Calculation Preferences" selection to "Options" menu<br>
+- Switched things so that all interested objects register themselves
+with the<br>
+Chart Center on instatiation<br>
+- And a thousand other little things<br>
+<br>
+<span style="font-weight: bold; color: rgb(153, 51, 153);"> 13 MAR 03</span><br>
+- created IFJStorage interface<br>
+- installed new widgets in FJMainFrameSplit to test just how
+independant they<br>
+are - working<br>
+- Got the BasicTablePanel to update itself automatically<br>
+- Worked on Ant task "web_release" which automatically uploads website
+to<br>
+SF.net.&nbsp; Still trying to get it to gunzip the file on SF.net,
+however<br>
+- Cleaned up the binary /ephe files on SF.net - still have to test them,<br>
+however<br>
+- Completely revamped API into 3 part structure (freejyotish.main,<br>
+freejyotish.store, freejyotish.gui) - Magnum Opus of the evening<br>
+- Changed CVS to reflect API change<br>
+- Got Vimshottari Panel to update itself correctly<br>
+- Cleaned all possible junk code out of FJMainFrame<br>
+- Began getting the CalcPrefsDialog wired up<br>
+<br>
+<span style="color: rgb(153, 51, 153); font-weight: bold;"> 15 MAR 03</span><br>
+- Got HouseData printing to xml<br>
+- Made xml handler for AllPlanets data - tested read/write: working fine<br>
+- Attempted to use Castor to marshall/unmarshall objects - doesn't work
+because several classes use HashMap, which Castor can't handle - Waste
+of time<br>
+- Made xml writer for Chart objects<br>
+- Almost got a Chart object xml reader working - some glitches
+remain... will get it working...<br>
+<br>
+<span style="font-weight: bold; color: rgb(153, 51, 153);"> 17 MAR 03</span><br>
+- Created a back end that works using Java serialization. Much, much
+quicker to create than the XML backend. Good for testing in this early
+phase. Also, helped me to weed out how much code was really
+interface-based, and how much was incorrectly tied to the xml classes
+that implement the interface.<br>
+- Created a quick, simple input dialog for making new charts. The one
+we had been working on (and will implement one of these days) was just
+too slick and complex for efficient work. Made something much more down
+to earth - no error checking, no instructions, but *it works*. <br>
+- Uday moving forward strongly on the gui end of things.<br>
+<br>
+<span style="font-weight: bold; color: rgb(153, 51, 153);"> 20 MAR 03</span><br>
+- Horrible computer decompensation yesterday, had to reload the
+operating system, etc. Lost everything. Luckily, CVS was up to date with
+most of it (except the experimental stuff...). Lost my update list on my
+home computer. Good thing it was posted here as well ;)<br>
+- Found an open-source astrology font (glyphs and symbols) yesterday.
+Looking forward to getting this <br>
+- Most of today spent getting Mandrake 9.0 up and running, as well as
+the system configured for java development. <br>
+<br>
+<span style="font-weight: bold; color: rgb(153, 51, 153);"> 21 MAR 03</span><br>
+- Made an extensive list of everything that needs doing on the gui.
+Well, not everything, but the list is long enough as it is...<br>
+<br>
+<span style="font-weight: bold; color: rgb(153, 51, 153);"> 22 MAR 03</span><br>
+- Got my mx back up and running pretty good with the help from the
+folks on the LULA (Linux Users Los Angeles) mailing list. <br>
+- Created a new widget today "FJNativeDisplay" which will display all
+information about the current chart. Built about half the necessary
+guts. Working fine. <br>
+<br>
+<span style="font-weight: bold; color: rgb(153, 51, 153);"> 23 MAR 03</span><br>
+- Fixed the deletion problem in SerialCenter<br>
+- Implemented saving of ChartCalcPrefs in SerialCenter<br>
+- Separated (at least some) of SerialCenter coder from ChartCenter<br>
+- Cleaned up lots of dead/test code from various files<br>
+- Fixed a glitch in FJListPanel that choked on a chart deletion<br>
+- etc.<br>
+<br>
+<span style="font-weight: bold; color: rgb(153, 51, 153);"> 25 MAR 03</span><br>
+- Began creation of new Chart Calculation pkg.<br>
+- Added new pkg "freejyotish.main.calc" to cvs<br>
+- Began moving relevant files to new pkg.<br>
+- Began writing of various Calculation code bits<br>
+- Wrote PanchangI.java <br>
+- Created BasicsI.java - half written<br>
+- Added new files to cvs<br>
+<br>
+<span style="font-weight: bold; color: rgb(153, 51, 153);"> 27 MAR 03</span><br>
+- Completed the ant "web release" task (see 13 Mar 03) with help from
+Peter Reilly of the Ant Users List. Task now takes all web content on
+local machine, tars it, zips it, uploads it to sourceforge.net, unzips
+it, untars it, and cleans all artifacts from the directory. So uploading
+these pages now requires a single command line "ant web_release".
+Thanks, Peter.<br>
+<br>
+<span style="font-weight: bold; color: rgb(153, 51, 153);"> 4 APR 03</span><br>
+- Uday has been working heavily on the SimpleInputDialog for the last
+week. It's starting to work really well<br>
+- I did research related to creating a sane, flexible, powerful
+calculation engine. Read up on Java patterns. I believe that the correct
+pattern for the freejyotish.main.calc package overall is the Builder
+pattern. That is the direction I'll be heading when writing this package<br>
+- Created the CalculationInformationRequiredException class - the first
+of a couple of freejyotish.main.calc Exception classes suited to
+reporting anything going wrong in the calculation guts of FJ. <br>
+<br>
+<span style="font-weight: bold; color: rgb(153, 51, 153);"> 5 APR 03</span><br>
+- Created 7 new classes, the beginnings of the core of the
+freejyotish.main.calc package. None of these are remotely finished, but
+it's beginning to take shape.<br>
+- Brought a new programmer/jyotishi on board. Welcome Ken to the
+project. Looking forward to working with him.<br>
+<br>
+<span style="font-weight: bold; color: rgb(153, 51, 153);"> 11 APR 03</span><br>
+- Worked out some minor bugs in the SimpleInputDialog<br>
+- Added second logo possibility to /images<br>
+- More planning of freejyotish.main.calc pkg.<br>
+<br>
+<span style="font-weight: bold; color: rgb(153, 51, 153);"> 12 APR 03</span><br>
+- Re-set up jyotish developers' mailing list<br>
+<br>
+<span style="font-weight: bold; color: rgb(153, 51, 153);"> 13 APR 03</span><br>
+- Got a new astrology glyph font for FJ. Started integrating it into
+the program. Wrote the constants necessary to using this font to
+FJConstants file.<br>
+- Began creating new, simplified NativeInfo2 persistence mech. This is
+now the third persistence strategy for FreeJyotish. An attempt to get
+very simple. The XML mech works fine, but is bloated. The java
+serialization mechanism makes it so the slightest change in the code
+invalidates all the saved charts. So this is an attempt to make a very
+direct and simple "|" delimited file that saves only the birth data for
+each chart. This will mean re-working (again) the entire ChartCenter to
+adapt it back to saving NativeInfo2 objects instead of Chart objects.
+When loading saved charts, all chart data will be recalculated.<br>
+- Added "WriteNativeFile" class to cvs. <br>
+- Created "DebugWindow" class to have an easy place to see the JVM
+output. Integrated the window into "FJSplit", but still haven't hooked
+it up to live output. Added to cvs.<br>
+<br>
+<span style="font-weight: bold; color: rgb(153, 51, 153);"> 14 APR 03</span><br>
+- Began adding appropriate NativeInfo2 handling code to ChartCenter<br>
+- Made relevant changes in IChartCenter<br>
+- Fleshed out the WriteNativeFile class and tested its writing. Works
+fine for single NativeInfo2 objects. Next have to make it print all
+NativeInfo2's in memory.<br>
+<br>
+<span style="font-weight: bold; color: rgb(153, 51, 153);"> 17 APR 03</span><br>
+- In a late-night, full moon (2 LIB 30) mini-spree, I got the
+ReadNativeFile up and running. Tested in in tandem with the
+WriteNativeFile, reading and writing the same file several times to make
+sure the end results were the same as the input. No problem. My next
+chunk of work on this should polish off this new persistance mech.
+Looking forward to making an adapter that allows me to import all my
+WinStar and Goravani Jyotish files. WinStar looks easy. So far, GJ looks
+difficult. We'll see.<br>
+- Created the new IStorageCenter implementation called FileCenter, that
+makes use of the read/write native file classes created in previous days.<br>
+- Adapted the ChartCenter to this new form of storing charts<br>
+- Integrated it all with the FreeJyotish front end. Thank god for
+interfaces. The whole thing took about 10 minutes. All working fine.<br>
+- Realized later that I had the charts reading in correctly, but hadn't
+hooked up writing at all. Charts were disappearing after closing the
+program. This has been corrected.<br>
+- Began work on an importer for WinStar export files. Read up some on
+parsing. Turns out the WinStar file is highly regular, and shouldn't be
+*too* tough to import correctly. We'll see.<br>
+- Today was a magnum opus day, seems like sometimes everything happens
+all at once.<br>
+<br style="font-weight: bold; color: rgb(153, 51, 153);">
+<span style="font-weight: bold; color: rgb(153, 51, 153);"> 18 APR 03</span><br>
+- Slogged forward tonight on the WinStar file importer. It's all<br>
+straightforward, tedious work. But coming along fine. The first version
+will be for testing only, with hard-coded path and filename arguments.
+But I'll be able to import all those charts. That was about it today. <br>
+<br>
+<span style="font-weight: bold; color: rgb(153, 51, 153);"> 19 APR 03 </span><br>
+- Finished WinStar file importer. Imported (almost) all birth data from
+my WinStar application.<br>
+<br>
+<span style="font-weight: bold; color: rgb(153, 51, 153);"> 21 APR 03</span><br>
+- Another Linux tragedy wipes out my home directory. At least the rest
+of the installation is fine. This is the problem with being a *nix
+newbie. Unfortunately, my big piece of work, the WinStar importer is a
+casualty of this crash. Ugh. :(<br>
+- Backup everything to cvs everyday...OK?<br>
+<br>
+<span style="font-weight: bold; color: rgb(153, 51, 153);"> 25 APR 03</span><br>
+- Planned extensively for construction of the new calculation back end.
+It's a complex process (at least for me).<br>
+- Sent out document of planned calculator to other developers on the
+project to see what they thought of it. <br>
+<br>
+<span style="font-weight: bold; color: rgb(153, 51, 153);"> 26 APR 03</span><br>
+- Emails back and forth with Ken regarding new calculator. He is
+recommending using a flexible form of Java object that I've never seen
+before. Basically, rather than defining variables and then having the
+standard get/set methods, this type of object is basically a Hashtable
+on a stick. That way it can hold as many of whatever kind of variables
+you choose, and as long as you know the names you stored them under, you
+can get them back out and cast them correctly. Has only on get/set pair,
+which is really a get/put pair. Very interestink...<br>
+<br>
+<span style="font-weight: bold; color: rgb(153, 51, 153);"> 28 APR 03</span><br>
+- Created new CalculationPreferences object based on the ideas outlined
+on the 26th.<br>
+<br>
+<span style="font-weight: bold; color: rgb(153, 51, 153);"> 29 APR 03</span><br>
+- Created new WriteCalculationPreferences and
+ReadCalculationPreferences objects, that can - oddly enough - right and
+read the new kind of CalculationPreferences object. Tested this
+extensively. Works like a charm. <br>
+<br>
+<span style="font-weight: bold; color: rgb(153, 51, 153);"> 30 APR 03</span><br>
+- Tonight was a BIG night. Got the new freejyotish.main.calc
+calculation system up and running finally. Currently able to switch
+zodiacs and ayanamsas. This took several hours to get working and iron
+out all the wrinkles.<br>
+- Removed at least 9 old files from the current working directory, and
+put them in the attic.<br>
+<br>
+<span style="font-weight: bold; color: rgb(153, 51, 153);"> 1 MAY 03</span><br>
+Welcome to the 3-letter month.<br>
+- Got the chart calculation routine to switch between true/mean nodes.
+This was much more painful than it needed to be. And I'm not happy with
+the torturous complexity of the code. It's not easy to read, and I don't
+think it's maintainable. But it does *work.*<br>
+- Got the three currently working calculation preferences hooked up and
+working in the UI.<br>
+<br>
+<span style="font-weight: bold; color: rgb(153, 51, 153);"> 2 MAY 03 </span><br>
+- THE MOST EXALTED PLANETS IN THE LAST 1000 YEARS TODAY - SEVEN PLANETS
+EXALTED<br>
+- Created a TabbedPane panel and set several widgets inside it. Loaded
+it into FJSplit for a look. It's excellent. This should save a lot of
+screen real estate.<br>
+- Got the cursor to change to "wait" during calculations<br>
+<br>
+<span style="font-weight: bold; color: rgb(153, 51, 153);"> 3 MAY 03</span><br>
+- Reworked how varga data is created, stored, and used, to work better
+with new back-end.<br>
+- <br style="font-weight: bold; color: rgb(153, 51, 153);">
+<span style="font-weight: bold; color: rgb(153, 51, 153);"> 4 MAY 03</span><br>
+- Created AstakavargaCalculator from old file and fixed it to work with
+FreeJyotish<br>
+- Created JTable to display AV data and added it to FJTabbedPanel<br>
+- Created a generic display for basic house cusp data and added it to
+FJTabbedPanel<br>
+- FJ is starting to look a lot better.<br>
+<br>
+<span style="font-weight: bold; color: rgb(153, 51, 153);"> 5 MAY 03</span><br>
+- Fixed some minor stuff with the above (4 May) displays<br>
+- Spent a lot of time getting my main coding box re-set up. Took out
+the old motherboard, which featured a PII 350 mHz, and replaced it with
+an AMD XP 1800, which runs at about 1.5 mHz. The difference is
+unbelievable, and the upgrade was super-cheap, also.<br>
+<br>
+<span style="font-weight: bold; color: rgb(153, 51, 153);"> 6 MAY 03</span><br>
+- Got a large number of excellent GUI suggestions from Ken, including
+some sample code. Summary of these suggestions include information-rich
+tool-tips, a plethora of pop-up menus, and a general redesign around the
+tabs/popups combination. Very interesting.<br>
+- Played around a little bit with the GUI, trying out some of Ken's
+ideas<br>
+- Began serious work on code to import birth records from a Goravani
+Jyotish output file. Looking forward to getting this up and running, as
+I have several hundred charts in this format. Got pretty far with it.
+The file format is fairly easy to parse. <br>
+<br>
+<span style="font-weight: bold; color: rgb(153, 51, 153);"> 8 MAY 03</span><br>
+- Created importer for Goravani Jyotish files. (Still very buggy,
+though)<br>
+<br>
+<span style="font-weight: bold; color: rgb(153, 51, 153);"> 15 MAY 03 </span><br>
+- Beautiful lunar eclipse tonight, right on my natal moon. Ketu
+darshana.<br>
+- Got the House system preference working in the HouseDataCalculator,
+at least in a beta test format.<br>
+- Began hooking up the House system preference in the ChartCalcPrefs
+dialog, but ran into Class Cast problems I couldn't quite sort out.<br>
+<br>
+<span style="font-weight: bold; color: rgb(153, 51, 153);"> 17 MAY 03</span><br>
+- Created two exception handling classes for freejyotish.main.calc<br>
+- Created a BirthDataValidator<br>
+- Began building the BDV into the calculation sequence, and testing the
+exception handling classes<br>
+- FJ welcomes a new programmer on board: Santosh Deshpande, a java guru
+from Bangalore. Welcome, Santosh!<br>
+- Recent talks on FJ programming directions center around spending some
+time fixing up what is already there, rather than implementing new
+features. This includes:<br>
+1. Writing unit tests for everything (read: Magnum Opus)<br>
+2. Creating and implementing more exception handling and error checking
+code<br>
+3. Standardizing and cleaning up all variable names, class name, etc.<br>
+4. Standardizing and cleaning up code formatting<br>
+5. Creating the foundation for I18N<br>
+6. Creating a new preferences implementation<br>
+7. Reworking the foundations of the GUI <br>
+8. Lots more, etc.<br>
+So, this will begin a retrograde period with FJ, wherein we toughen it
+up for the real world. <br>
+<br>
+<br>
+<br>
+<br>
+</body>
+</html>
+@

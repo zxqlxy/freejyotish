@@ -1,0 +1,33 @@
+head	1.1;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.1
+date	2003.05.18.11.59.54;	author santoshs;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Basic I18N support for FJ in the calc prefs dialog.
+@
+text
+@<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+    <classpathentry kind="src" path=""/>
+    <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+    <classpathentry kind="lib" path="lib/SwissEph.jar"/>
+    <classpathentry kind="lib" path="lib/forms.jar"/>
+    <classpathentry kind="lib" path="lib/looks-all.jar"/>
+    <classpathentry kind="lib" path="lib/junit.jar"/>
+    <classpathentry kind="output" path=""/>
+</classpath>
+@

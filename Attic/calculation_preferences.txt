@@ -1,0 +1,38 @@
+head	1.2;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.2
+date	2003.05.15.03.49.31;	author michaeltaft;	state dead;
+branches;
+next	1.1;
+
+1.1
+date	2003.05.01.08.28.06;	author michaeltaft;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@Changed location of this file to /prefs
+@
+text
+@{ayanamsa=1, node=true, outer_planets=on, mode=sidereal}
+@
+
+
+1.1
+log
+@For now.
+@
+text
+@@
+

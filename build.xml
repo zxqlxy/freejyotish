@@ -1,0 +1,289 @@
+head	1.6;
+access;
+symbols
+	start:1.1.1.1 you:1.1.1;
+locks; strict;
+comment	@# @;
+
+
+1.6
+date	2003.05.21.05.34.22;	author michaeltaft;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2003.04.30.07.04.20;	author michaeltaft;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2003.04.24.02.27.34;	author michaeltaft;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2003.03.19.03.28.41;	author umashalkar;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2003.03.17.06.25.58;	author michaeltaft;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2002.05.30.05.16.46;	author michaeltaft;	state Exp;
+branches
+	1.1.1.1;
+next	;
+
+1.1.1.1
+date	2002.05.30.05.16.46;	author michaeltaft;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.6
+log
+@Changes to handle new .jars
+@
+text
+@<!--
+
+    Ant build file for the FreeJyotish program
+    
+
+-->
+
+<project name="FreeJyotish" default="dist" basedir=".">
+	<property name="build.compiler" value="jikes"/>
+	<property name="base.dir" value="."/>
+	<property name="src.dir" value="freejyotish"/>
+	<property name="build.dir" value="build"/>
+	<property name="lib.dir"  value="lib"/>
+	<property name="install.dir"  value=".."/>
+	<property name="doc.dir"  value="doc"/>
+	<property name="web.dir" value="website"/>
+	
+	<path id="project.class.path">
+		<pathelement location="${base.dir}"/>
+		<pathelement location="${base.dir}/lib/SwissEph.jar"/>
+		<pathelement location="${base.dir}/lib/forms.jar"/>
+            <pathelement location="${base.dir}/lib/looks-all.jar"/>
+	</path>
+	
+	<target name="init" depends="clean">
+		<!-- Create the time stamp -->
+		<tstamp/>
+		<mkdir dir="${build.dir}"/>
+	</target>
+
+	<target name="compile" depends="init">
+		<javac
+			srcdir="${src.dir}"
+			destdir="${build.dir}"
+			debug="on"
+			deprecation="on"
+			classpathref="project.class.path"
+		/>
+	</target>
+
+
+	<target name="dist" depends="compile">
+		<mkdir dir="${base.dir}"/>
+		<!-- Saves .jar file including time stamp -->
+		<jar jarfile="${base.dir}/FreeJyotish-${DSTAMP}.jar" basedir="${build.dir}" manifest="FreeJyotish.txt"/>
+	</target>
+
+
+
+	<target name="clean">
+		<delete dir="${build.dir}"/>
+		<delete>
+			<fileset dir="." includes="**/*~" defaultexcludes="no"/>
+			<fileset dir="." includes="**/*.class"/>
+		</delete>
+	</target>
+
+        
+	<target name="javadoc" depends ="dist">
+		<delete dir="${doc.dir}"/>
+		<mkdir dir="${doc.dir}"/>
+		<javadoc
+			packagenames="freejyotish.*"
+			sourcepath="${base.dir}"
+			classpathref="project.class.path"
+			destdir="${doc.dir}"
+			author="true"
+			version="true"
+			use="true"
+			windowtitle="FreeJyotish API reference"
+		/>
+	</target>
+	
+    <target name="fj" depends="dist">
+        <path id="run.class.path">
+            <pathelement location="${base.dir}"/>
+            <pathelement location="${base.dir}/lib/SwissEph.jar"/>
+            <pathelement location="${base.dir}/lib/forms.jar"/>
+            <pathelement location="${base.dir}/lib/looks-all.jar"/>
+            <pathelement location="${base.dir}/FreeJyotish-${DSTAMP}.jar"/>
+ 		<fileset dir="${lib.dir}">
+                <include name="**/*.jar"/>
+            </fileset>        
+	</path>
+    
+        <java classname="freejyotish.FreeJyotish"
+              classpathref="run.class.path" fork="yes" dir="."/> 
+    </target>
+    
+	<!-- Website Publishing Section -->
+	
+	<!-- Create .zip file from all website materials -->
+	<target name="web_zip">
+		  <tar tarfile="${base.dir}/FJWeb.tar" basedir="${web.dir}"/>
+		  <gzip zipfile="${base.dir}/FJWeb.tar.gz" src="${base.dir}/FJWeb.tar"/>
+	</target>
+	
+	<!-- Upload to SourceForge.net -->
+	<!-- Insert your own name where appropriate... -->
+	<target name="web_release" depends="web_zip">
+ 	<exec dir="${base.dir}" executable="scp"  output="dir.txt">
+	<arg line="FJWeb.tar.gz
+	michaeltaft@@jyotish.sourceforge.net:/home/groups/j/jy/jyotish/htdocs/"/>
+	</exec>
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
+	
+   	<shellscript shell="bash"  output="dir2.txt">
+         ssh -l michaeltaft jyotish.sourceforge.net &lt;&lt; END
+        cd /home/groups/j/jy/jyotish/htdocs/
+         gunzip FJWeb.tar.gz
+         tar xf FJWeb.tar
+         rm FJWeb.tar
+END
+         </shellscript>
+	
+		
+		
+	</target>
+	
+	
+	
+</project>
+
+
+@
+
+
+1.5
+log
+@Building a better build file.
+@
+text
+@d21 2
+d78 2
+d81 4
+a84 1
+        </path>
+@
+
+
+1.4
+log
+@Includes full web_release (for M.Taft's mx)
+@
+text
+@d94 4
+a97 4
+		<exec dir="${base.dir}" executable="scp" os="Linux" output="dir.txt">
+		<arg line="FJWeb.tar.gz michaeltaft@@jyotish.sourceforge.net:/home/groups/j/jy/jyotish/htdocs/"/>
+		</exec>
+	<!-- Uppack at SourceForge.net -->
+d99 2
+a100 1
+    <shellscript shell="bash"  output="dir2.txt">
+d102 1
+a102 1
+         cd /home/groups/j/jy/jyotish/htdocs/
+@
+
+
+1.3
+log
+@Now just write 'ant fj' to compile and run FreeJyotish!
+@
+text
+@d98 9
+a106 1
+	<!-- Code didn't work yet... Removed-->
+@
+
+
+1.2
+log
+@Updated build file with new targets.
+@
+text
+@d20 1
+a20 1
+		<!--<pathelement location="${src.dir}/lib/Swiss.jar"/>  -->
+d72 11
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@a7 4
+
+
+
+
+d10 2
+a11 1
+	<property name="src.dir" value="."/>
+d16 2
+a17 2
+
+
+d19 2
+a20 1
+		<pathelement location="${src.dir}"/>
+d22 1
+a22 1
+
+d24 2
+d41 3
+a43 7
+		<mkdir dir="${src.dir}"/>
+		<jar jarfile="${src.dir}/FreeJyotish.jar" manifest="FreeJyotish.txt">
+			<fileset dir="${build.dir}"/>
+			<fileset dir="${src.dir}">
+				<include name="**/*.gif"/>
+			</fileset>
+		</jar>
+d57 1
+a57 1
+	<target name="javadoc">
+d61 2
+a62 2
+			packagenames="javastyle.*"
+			sourcepath="${src.dir}"
+d71 25
+a96 1
+</project>
+@
+
+
+1.1.1.1
+log
+@Freejyotish
+@
+text
+@@
